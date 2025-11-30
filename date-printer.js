@@ -1,39 +1,32 @@
 /*
-  # Tiny Date Printer — Main Chapter
+  # Chapter 1 — Printing Today’s Date
 
-  ## WHAT
-  This file is the narrative entry point of the tiny date-printing application.
+  This file is intentionally shallow. It’s the **book-like** entry point of the
+  application: a short chapter that tells you what the program does and in what
+  order, without dragging in low-level details.
 
-  It explains the intention and delegates the actual date formatting to a helper
-  module, so the top-level file can stay mostly prose + orchestration.
+  - It does not explain how dates are formatted.
+  - It does not explain how time works.
+  - It only describes the high-level flow.
 
-  ## WHY
-  This mirrors how we would like larger systems to behave:
-  - The main file reads like a high-level chapter.
-  - Implementation details live in focused helper modules.
-  - Coding agents (or humans) can change the helper without cluttering the chapter.
-
-  ## HOW
-  - Import a helper called `getFormattedDate` from a separate module.
-  - Call it and print the result.
-
-  This keeps the main file almost entirely about *what* and *why*,
-  with just a single, obvious *how* at the bottom.
+  All the messy or detailed parts live elsewhere (in helper modules) so that
+  this chapter can remain readable in one pass.
 */
 
 import { getFormattedDate } from './getFormattedDate.js';
 
 /*
-  ----------------------------------------------------------------------
-  ## Section: main
-  ### WHAT
-  Print the formatted date to the console.
+  ## Flow of this chapter (WHAT, in tiny steps)
 
-  ### WHY
-  This is the observable behavior of the program: showing today as YYYY-MM-DD.
+  1. Ask the date layer for a human-ready representation of “today”.
+  2. Present that representation on the console.
 
-  ### HOW
-  Ask the helper for the current date string and log it.
+  That’s it. No branching, no configuration, no formatting decisions here.
+  This file should feel almost like pseudocode glued to a story.
 */
 
-console.log(getFormattedDate());
+// Step 1 — obtain today’s date in our chosen representation.
+const today = getFormattedDate();
+
+// Step 2 — present it to the outside world.
+console.log(today);
