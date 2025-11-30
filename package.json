@@ -1,0 +1,9 @@
+{
+  "name": "literate-date-printer",
+  "version": "1.0.0",
+  "description": "A small experiment in literate-style JavaScript programming.",
+  "type": "module",
+  "scripts": {
+    "start": "node datePrinter.js"
+  }
+}
